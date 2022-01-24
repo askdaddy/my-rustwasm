@@ -1,0 +1,12 @@
+[package]
+name = "wasm"
+version = "0.1.0"
+authors = ["Seven <askdaddy@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+wasm-bindgen = "0.2"
+
+[lib]
+crate-type = ["cdylib"]
+path = "./src/wasm/lib.rs"
