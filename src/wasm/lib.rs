@@ -1,3 +1,4 @@
+mod time;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -9,6 +10,12 @@ macro_rules! console_log {
     ($($t:tt)*) => (log(&format_args!($($t)*).to_string()))
 }
 
+#[wasm_bindgen(start)]
+pub fn main() {
+
+
+    console_log!("the current time (in ms) is {}", time::now());
+}
 
 #[wasm_bindgen]
 pub fn action(input: &str) -> String {
